@@ -26,6 +26,6 @@ class ModifyProductsTable extends Migration
      */
     public function down()
     {
-        $table->dropColumn('price');
+        Schema::dropIfExists('products');
     }
 }
