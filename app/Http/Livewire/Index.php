@@ -27,8 +27,15 @@ class Index extends Component
         $timestampSearchAsc = Product::where('stock', '>', 0)->where('name','like','%'.$this->query.'%')->latest()->get();
         $timestampSearchDesc = Product::where('stock', '>', 0)->where('name','like','%'.$this->query.'%')->oldest()->get();
         return view('livewire.index', ['products' =>
-            $this->query == null && $this->type == null ? $productData :
-            ($this->query == null && $this->type == 'A-Z' ? $nameAsc : ($this->query == null && $this->type == 'Z-A' ? $nameDesc : ($this->query == null && $this->type == 'Newest' ? $timestampAsc : ($this->query == null && $this->type == 'Oldest' ? $timestampDesc : ($this->query != null && $this->type == 'A-Z') ? $nameSearchAsc : ($this->query != null && $this->type == 'Z-A' ? $nameSearchDesc : ($this->query != null && $this->type == 'Newest' ? $timestampSearchAsc : ($this->query != null && $this->type == 'Oldest' ? $timestampSearchDesc : $productSearch)))))))
+            $this->query == null && $this->type == null ? $productData : 
+            (($this->query == null && $this->type == 'A-Z') ? $nameAsc : 
+            (($this->query == null && $this->type == 'Z-A') ? $nameDesc : 
+            (($this->query == null && $this->type == 'Newest') ? $timestampAsc : 
+            (($this->query == null && $this->type == 'Oldest') ? $timestampDesc : 
+            (($this->query != null && $this->type == 'A-Z')) ? $nameSearchAsc : 
+            (($this->query != null && $this->type == 'Z-A') ? $nameSearchDesc : 
+            (($this->query != null && $this->type == 'Newest') ? $timestampSearchAsc : 
+            (($this->query != null && $this->type == 'Oldest') ? $timestampSearchDesc : $productSearch)))))))
         ]);
     }
 
