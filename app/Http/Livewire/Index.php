@@ -32,10 +32,10 @@ class Index extends Component
             (($this->query == null && $this->type == 'Z-A') ? $nameDesc : 
             (($this->query == null && $this->type == 'Newest') ? $timestampAsc : 
             (($this->query == null && $this->type == 'Oldest') ? $timestampDesc : 
-            (($this->query != null && $this->type == 'A-Z')) ? $nameSearchAsc : 
+            (($this->query != null && $this->type == 'A-Z') ? $nameSearchAsc : 
             (($this->query != null && $this->type == 'Z-A') ? $nameSearchDesc : 
             (($this->query != null && $this->type == 'Newest') ? $timestampSearchAsc : 
-            (($this->query != null && $this->type == 'Oldest') ? $timestampSearchDesc : $productSearch)))))))
+            (($this->query != null && $this->type == 'Oldest') ? $timestampSearchDesc : $productSearch))))))))
         ]);
     }
 
