@@ -15,7 +15,6 @@ class ModifyProductsTable extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             $table->renameColumn('title', 'name');
-            $table->integer('stock')->change();
             $table->integer('price')->after('stock');
         });
     }
