@@ -12,10 +12,10 @@
         </div>
     @endif
     <div class="row justify-content-end">
-    	<div class="col-3">
+    	<div class="col-md-3">
     		<input type="text" class="form-control" wire:model="query" placeholder="Search..">
     	</div>
-    	<div class="col-1">
+    	<div class="col-md-1">
     		<div class="dropdown d-flex justify-content-end">
 			 	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 			    {{$sortBy}}
