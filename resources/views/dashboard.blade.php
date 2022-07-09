@@ -59,6 +59,7 @@
                 </div>
 
                 <div class="card-body">
+                    <p>Total Products: {{ count($products) }}</p>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>

@@ -11,21 +11,28 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
-    <div class="row justify-content-end">
-    	<div class="col-md-3">
-    		<input type="text" class="form-control" wire:model="query" placeholder="Search..">
+    <div class="row justify-content-between">
+		<div class="col">
+    		<p class="mb-0 mt-2">Total Products: {{ count($products) }}</p>
     	</div>
-    	<div class="col-md-1">
-    		<div class="dropdown d-flex justify-content-end">
-			 	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-			    {{$sortBy}}
-			  	</button>
-				<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-				    <li><a class="dropdown-item" wire:click="$set('type', 'A-Z')">A-Z</a></li>
-				    <li><a class="dropdown-item" wire:click="$set('type', 'Z-A')">Z-A</a></li>
-				    <li><a class="dropdown-item" wire:click="$set('type', 'Newest')">Newest</a></li>
-				    <li><a class="dropdown-item" wire:click="$set('type', 'Oldest')">Oldest</a></li>
-				</ul>
+		<div class="col">
+			<div class="d-flex justify-content-end">
+				<div class="col-md-4 me-2">
+					<input type="text" class="form-control" wire:model="query" placeholder="Search..">
+				</div>
+				<div class="col-md-2">
+					<div class="dropdown d-flex justify-content-end">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+						{{$sortBy}}
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+							<li><a class="dropdown-item" wire:click="$set('type', 'A-Z')">A-Z</a></li>
+							<li><a class="dropdown-item" wire:click="$set('type', 'Z-A')">Z-A</a></li>
+							<li><a class="dropdown-item" wire:click="$set('type', 'Newest')">Newest</a></li>
+							<li><a class="dropdown-item" wire:click="$set('type', 'Oldest')">Oldest</a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
     </div>
