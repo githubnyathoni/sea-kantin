@@ -10,13 +10,17 @@ use Auth;
 class ProductController extends Controller
 {
     public function store(Request $input){
-    	$input->validate([
+    	$validator = Validator::make($input->all(), [
             'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'required|image|mimes:jpg,jpeg,png,bmp,gif,svg,webp',
+            'image' => 'required|image|mimes:jpg,jpeg,png,bmp,gif,svg,webp|max:1800',
             'stock' => 'required',
             'price' => 'required',
         ]);
+
+        if($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        }
 
         if($input->file('image')){
             $file = $input->file('image');
