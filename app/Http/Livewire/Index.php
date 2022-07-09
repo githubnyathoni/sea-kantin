@@ -63,6 +63,9 @@ class Index extends Component
     		$wallet->balance += $this->pay;
     		$wallet->save();
 
+            $this->qty = null;
+            $this->pay = null;
+
     		session()->flash('success', 'Thank you for buying '.$this->qty .' '. $this->product->name);
     	}
     }
