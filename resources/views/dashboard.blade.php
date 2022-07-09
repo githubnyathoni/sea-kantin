@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="description" class="col-form-label">Description:</label>
-                                        <textarea class="form-control" name="description" id="description" required></textarea>
+                                        <textarea class="form-control" maxlength="230" name="description" id="description" required></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="image" class="col-form-label">Image:</label>
